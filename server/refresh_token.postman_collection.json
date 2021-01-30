@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "2a99a5d8-2087-4fc9-868f-4160c1873ca3",
+		"name": "Refresh Token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"name\":\"測試人員\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwibmFtZSI6Iua4rOippuS6uuWToSIsImlhdCI6MTYxMTk4MTc1MCwiZXhwIjoxNjExOTgxODEwfQ.zpdohOOl5aUCofciQfZ_A-ZTYF9VlEJDwg0eRfB-HUg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/secure",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"secure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"name\":\"測試人員\",\n\t\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwibmFtZSI6Iua4rOippuS6uuWToSIsImlhdCI6MTYxMTk4MTQ3OCwiZXhwIjoxNjEyMDY3ODc4fQ.alJ42AcwYe9OOYCNCPhu3YQ39hdGTD5LZrRRwiNw_BE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
